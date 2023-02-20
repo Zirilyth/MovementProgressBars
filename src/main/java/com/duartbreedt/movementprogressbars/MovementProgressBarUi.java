@@ -16,7 +16,10 @@ import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.geom.RoundRectangle2D;
 import java.nio.FloatBuffer;
+import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.Objects;
+import java.util.Random;
 
 public class MovementProgressBarUi extends BasicProgressBarUI {
 
@@ -79,6 +82,11 @@ public class MovementProgressBarUi extends BasicProgressBarUI {
     private void paintFlag(Graphics graphics, JComponent component, int progress) {
         if (progressBar.getOrientation() != SwingConstants.HORIZONTAL || !component.getComponentOrientation().isLeftToRight()) {
 
+            //TODO: Create Random flags
+
+
+
+
             // TODO: Potential future work for vertical progress bars
 
             super.paintDeterminate(graphics, component);
@@ -123,6 +131,13 @@ public class MovementProgressBarUi extends BasicProgressBarUI {
     private void loadStoredColors() {
         if (colors == null || colors.length == 0) {
             String enumValue = PropertiesComponent.getInstance().getValue(FlagColor.PROPERTY_KEY);
+
+
+            if(Objects.equals(enumValue, "RandomFlag"))
+            {
+                enumValue = GetRandomFlag();
+            }
+
             FlagColor flagColor;
             try {
                 flagColor = (FlagColor) Class.forName(enumValue).getConstructor().newInstance();
@@ -133,6 +148,8 @@ public class MovementProgressBarUi extends BasicProgressBarUI {
 
             colors = flagColor.getColors();
             colorFraction = 1f / colors.length;
+
+
         }
     }
 
@@ -176,5 +193,33 @@ public class MovementProgressBarUi extends BasicProgressBarUI {
     public static float clamp(float val, float min, float max) {
         return Math.max(min, Math.min(max, val));
     }
+
+    private String GetRandomFlag() {
+        String[] givenList = {
+                "agender",
+                "aromantic",
+                "asexual",
+                "bear_brotherhood",
+                "bigender",
+                "bisexual",
+                "gay_men",
+                "gay_pride",
+                "genderqueer",
+                "leather",
+                "lesbian",
+                "lipstick_lesbian",
+                "nonbinary",
+                "pansexual",
+                "polysexual",
+                "transgender"
+        };
+
+        Random rand = new Random();
+        int randomIndex = rand.nextInt(givenList.length);
+
+        return givenList[randomIndex];
+    }
 }
+
+
 

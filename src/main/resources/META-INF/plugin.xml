@@ -1,7 +1,7 @@
 <idea-plugin>
-    <id>com.duartbreedt.movementprogressbars</id>
+    <id>com.Faye.movementprogressbars</id>
     <name>Movement</name>
-    <vendor email="duartbreedt@gmail.com" url="https://github.com/DuartBreedt">DuartBreedt</vendor>
+    <vendor email="zirilyth@gmail.com" url="https://github.com/Zirilyth">Faye Buchanan</vendor>
 
     <description><![CDATA[
     <p>Adds LGBTQIA+ progress bars to your IDE!</p>
@@ -28,6 +28,8 @@
         <li>Bear Brotherhood</li>
         <li>Leather</li>
         <li>Lipstick Lesbian</li>
+        <li>Random</li>
+
     </ul>
     ]]></description>
 
@@ -37,7 +39,7 @@
             </ul>
         ]]></change-notes>
 
-    <version>1.0.3</version>
+    <version>2.0.0</version>
 
     <depends>com.intellij.modules.platform</depends>
 
@@ -87,6 +89,9 @@
                     icon="/leather.svg"/>
             <action class="com.duartbreedt.movementprogressbars.actions.SetFlagToLipstickLesbianAction" id="Movement.Actions.ChangeFlag.LipstickLesbian"
                     text="Lipstick Lesbian" icon="/lipstick_lesbian.svg"/>
+            <separator/>
+            <action class="com.duartbreedt.movementprogressbars.actions.SetFlagToRandom" id="Movement.Actions.ChangeFlag.Random"
+                    text="Random" icon="/lipstick_lesbian.svg"/>
 
         </group>
     </actions>
