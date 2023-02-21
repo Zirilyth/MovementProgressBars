@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>com.Faye.movementprogressbars</id>
+    <id>com.duartbreedt.movementprogressbars</id>
     <name>Movement</name>
     <vendor email="zirilyth@gmail.com" url="https://github.com/Zirilyth">Faye Buchanan</vendor>
 
@@ -90,7 +90,7 @@
             <action class="com.duartbreedt.movementprogressbars.actions.SetFlagToLipstickLesbianAction" id="Movement.Actions.ChangeFlag.LipstickLesbian"
                     text="Lipstick Lesbian" icon="/lipstick_lesbian.svg"/>
             <separator/>
-            <action class="com.duartbreedt.movementprogressbars.actions.SetFlagToRandom" id="Movement.Actions.ChangeFlag.Random"
+            <action class="com.duartbreedt.movementprogressbars.actions.SetFlagToRandomAction" id="Movement.Actions.ChangeFlag.Random"
                     text="Random" icon="/lipstick_lesbian.svg"/>
 
         </group>
