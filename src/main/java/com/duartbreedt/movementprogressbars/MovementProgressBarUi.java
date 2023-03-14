@@ -133,7 +133,7 @@ public class MovementProgressBarUi extends BasicProgressBarUI {
             String enumValue = PropertiesComponent.getInstance().getValue(FlagColor.PROPERTY_KEY);
 
 
-            if(Objects.equals(enumValue, "RandomFlag"))
+            if(Objects.equals(enumValue, "Random"))
             {
                 enumValue = GetRandomFlag();
             }
@@ -196,28 +196,28 @@ public class MovementProgressBarUi extends BasicProgressBarUI {
 
     private String GetRandomFlag() {
         String[] givenList = {
-                "agender",
-                "aromantic",
-                "asexual",
-                "bear_brotherhood",
-                "bigender",
-                "bisexual",
-                "gay_men",
-                "gay_pride",
-                "genderqueer",
-                "leather",
-                "lesbian",
-                "lipstick_lesbian",
-                "nonbinary",
-                "pansexual",
-                "polysexual",
-                "transgender"
+                "Agender",
+                "Aromantic",
+                "Asexual",
+                "BearBrotherhood",
+                "Bigender",
+                "Bisexual",
+                "GayMen",
+                "GayPride",
+                "Genderqueer",
+                "Leather",
+                "Lesbian",
+                "LipstickLesbian",
+                "Nonbinary",
+                "Pansexual",
+                "Polysexual",
+                "Transgender"
         };
 
         Random rand = new Random();
         int randomIndex = rand.nextInt(givenList.length);
 
-        return givenList[randomIndex];
+        return "com.duartbreedt.movementprogressbars.colors." + givenList[randomIndex];
     }
 }
 

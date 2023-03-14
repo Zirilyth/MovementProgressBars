@@ -7,13 +7,11 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Random;
-
 public class SetFlagToRandomAction extends AnAction {
 
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
-        PropertiesComponent.getInstance().setValue(FlagColor.PROPERTY_KEY, Random.class.getName());
+        PropertiesComponent.getInstance().setValue(FlagColor.PROPERTY_KEY, "Random");
     }
 
     @Override
